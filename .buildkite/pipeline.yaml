@@ -2,9 +2,8 @@ steps:
   - label: ":building_construction: Build"
     key: "build"
     commands:
-      - echo "Testing.........."
-      - yarn install
-      - yarn build
+      - chmod +x .buildkite/scripts/build.sh
+      - .buildkite/scripts/build.sh
     plugins:
       - docker#v3.13.0:
           mount-ssh-agent: true
@@ -12,21 +11,4 @@ steps:
           image: "node:latest" 
           workdir: /app
     artifact_paths:
-      - ./dist/**/*
-      
-  - label: ":terraform: Deploy"
-    key: "deploy"
-    depends_on: "build"
-    commands:
-      - chmod +x .buildkite/scripts/deploy.sh
-      - .buildkite/scripts/deploy.sh
-    plugins:
-      - cultureamp/aws-assume-role#v0.1.0:
-          role: "arn:aws:iam::695663959248:role/S3Admin"
-      - docker#v3.5.0:
-          mount-ssh-agent: true
-          propagate-environment: true
-          propagate-aws-auth-token: true
-          entrypoint: ""
-          shell: ["/bin/sh", "-c"]
-          image: "hashicorp/terraform:latest"      
+      - ./dist/**/*    
