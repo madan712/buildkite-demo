@@ -5,9 +5,9 @@ steps:
       - .buildkite/scripts/build.sh
     plugins:
       - docker#v3.13.0:
-        propagate-environment: true
-        mount-ssh-agent: true
-        image: "node:latest" 
-        workdir: /app
+          propagate-environment: true
+          mount-ssh-agent: true
+          image: "node:latest" 
+          workdir: /app
     artifact_paths:
       - ./dist/**/*
