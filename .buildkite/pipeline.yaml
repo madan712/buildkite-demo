@@ -11,8 +11,6 @@ steps:
           workdir: /app
     artifact_paths:
       - ./dist/**/*
-    agents:
-      queue: default
 
   - label: ":terraform: Deploy"
     key: "deploy"
@@ -28,5 +26,3 @@ steps:
           image: "hashicorp/terraform:latest"
       - cultureamp/aws-assume-role#v0.1.0:
           role: "arn:aws:iam::695663959248:role/S3Admin"
-    agents:
-      queue: default
