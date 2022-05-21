@@ -4,7 +4,7 @@ steps:
     commands:
       - .buildkite/scripts/build.sh
     plugins:
-      - docker#v3.5.0:
+      - docker#v3.13.0:
           propagate-environment: true
           mount-ssh-agent: true
           image: "node:latest" 
