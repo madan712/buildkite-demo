@@ -9,3 +9,6 @@ yarn install
 
 echo "Building"
 yarn build
+
+echo "Changing owner"
+chown -R buildkite-agent *
