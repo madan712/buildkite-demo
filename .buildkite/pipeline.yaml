@@ -6,7 +6,6 @@ steps:
     plugins:
       - docker#v3.13.0:
           propagate-environment: true
-          mount-ssh-agent: true
           image: "node:latest" 
           workdir: /app
     artifact_paths:
