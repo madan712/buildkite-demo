@@ -14,11 +14,10 @@ terraform {
 provider "aws" {
   profile = "default"
   region  = "us-east-1"
-  shared_credentials_file = "${pathexpand("~/.aws/credentials")}"
 
 
   assume_role {
-    role_arn = "arn:aws:iam::580803390928:role/DFSJenkins"
+    role_arn = "arn:aws:iam::695663959248:role/S3Admin"
   }
 
 
