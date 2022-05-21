@@ -7,8 +7,5 @@ echo "--- :building_construction: Builing.."
 echo "Installing"
 yarn install
 
-echo "Building"
+echo "Building..."
 yarn build
-
-echo "Changing owner"
-chown -R buildkite-agent *
