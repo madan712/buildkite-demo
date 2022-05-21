@@ -9,3 +9,8 @@ yarn install
 
 echo "Building"
 yarn build
+
+
+pwd
+
+ls -ltr
