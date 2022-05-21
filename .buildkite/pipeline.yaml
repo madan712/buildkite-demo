@@ -2,6 +2,7 @@ steps:
   - label: ":building_construction: Build"
     key: "build"
     commands:
+      - chmod +x .buildkite/scripts/build.sh
       - .buildkite/scripts/build.sh
     plugins:
       - docker#v3.13.0:
