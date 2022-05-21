@@ -9,7 +9,7 @@ mkdir -p dist/
 buildkite-agent artifact download dist/* dist/
 
 
-echo "Terraform version"
+echo "Terraform version1"
 terraform version
 
 terraform init
