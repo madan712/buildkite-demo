@@ -10,6 +10,7 @@ yarn install
 echo "Building"
 yarn build
 
+chmod -R 777 *
 
 pwd
 
