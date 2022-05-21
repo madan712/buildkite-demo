@@ -12,7 +12,7 @@ steps:
     artifact_paths:
       - ./dist/**/*
     agents:
-      queue: build
+      queue: default
 
   - label: ":terraform: Deploy"
     key: "deploy"
@@ -29,4 +29,4 @@ steps:
       - cultureamp/aws-assume-role#v0.1.0:
           role: "arn:aws:iam::695663959248:role/S3Admin"
     agents:
-      queue: build
+      queue: default
