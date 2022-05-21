@@ -2,8 +2,9 @@ steps:
   - label: ":building_construction: Build"
     key: "build"
     commands:
-      - chmod +x .buildkite/scripts/build.sh
-      - .buildkite/scripts/build.sh
+      - echo "Testing.........."
+      - yarn install
+      - yarn build
     plugins:
       - docker#v3.13.0:
           mount-ssh-agent: true
