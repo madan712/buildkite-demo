@@ -20,10 +20,12 @@ steps:
       - chmod +x .buildkite/scripts/deploy.sh
       - .buildkite/scripts/deploy.sh
     plugins:
+      - cultureamp/aws-assume-role#v0.1.0:
+          role: "arn:aws:iam::695663959248:role/S3Admin"
       - docker#v3.5.0:
           propagate-environment: true
+          propagate-aws-auth-token: true
           entrypoint: ""
           shell: ["/bin/sh", "-c"]
           image: "hashicorp/terraform:latest"
-      - cultureamp/aws-assume-role#v0.1.0:
-          role: "arn:aws:iam::695663959248:role/S3Admin"
+      
