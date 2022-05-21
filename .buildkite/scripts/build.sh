@@ -7,5 +7,5 @@ echo "--- :building_construction: Builing.."
 echo "Installing"
 yarn install
 
-echo "Building"
+echo "Building1"
 yarn build
