@@ -7,11 +7,5 @@ echo "--- :building_construction: Builing.."
 echo "Installing"
 yarn install
 
-echo "Building"
+echo "Building.."
 yarn build
-
-chmod -R 777 *
-
-pwd
-
-ls -ltr
