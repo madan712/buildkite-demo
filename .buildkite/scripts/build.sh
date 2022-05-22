@@ -5,8 +5,10 @@ set -euo pipefail
 echo "--- :building_construction: Builing.."
 
 echo "Values inside script..."
-echo $MYKEY
-echo $MYVALUE
+KK=$(buildkite-aget meta-data get "MYKEY")
+VV=$(buildkite-aget meta-data get "MYVALUE")
+echo $KK
+echo $VV
 
 
 echo "Installing"
