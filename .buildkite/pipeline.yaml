@@ -2,6 +2,9 @@ steps:
   - label: ":building_construction: Build"
     key: "build"
     commands:
+      - echo "I am here"
+      - pwd
+      - ls -ltr
       - chmod +x .buildkite/scripts/build.sh
       - .buildkite/scripts/build.sh
     plugins:
@@ -10,6 +13,7 @@ steps:
           propagate-environment: true
           image: "node:latest" 
           workdir: /app
+          command: ["--user", "buildkite-agent:buildkite-agent"]
     artifact_paths:
       - ./dist/**/*
 
