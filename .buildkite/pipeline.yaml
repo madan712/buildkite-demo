@@ -12,6 +12,8 @@ steps:
       - ls -ltr
       - chmod +x .buildkite/scripts/build.sh
       - .buildkite/scripts/build.sh
+      - pwd
+      - ls -ltr
     plugins:
       - docker#v3.5.0:
           mount-ssh-agent: true
@@ -29,8 +31,6 @@ steps:
       - chmod +x .buildkite/scripts/deploy.sh
       - .buildkite/scripts/deploy.sh
     plugins:
-      - cultureamp/aws-assume-role#v0.1.0:
-          role: "arn:aws:iam::695663959248:role/S3Admin"
       - docker#v3.5.0:
           mount-ssh-agent: true
           propagate-environment: true
