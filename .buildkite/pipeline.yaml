@@ -36,5 +36,5 @@ steps:
           propagate-environment: true
           propagate-aws-auth-token: true
           entrypoint: ""
-          shell: ["/usr/bin/env", "bash"]
+          shell: ["/bin/sh", "-c"]
           image: "hashicorp/terraform:latest"      
