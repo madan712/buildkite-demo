@@ -11,7 +11,7 @@ buildkite-agent artifact download dist/* dist/
 pwd
 
 
-echo "Terraform version"
+echo "Terraform version.."
 terraform version
 
 terraform init
