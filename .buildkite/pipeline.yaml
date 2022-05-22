@@ -13,7 +13,6 @@ steps:
           propagate-environment: true
           image: "node:latest" 
           workdir: /app
-          command: ["--user", "buildkite-agent:buildkite-agent"]
     artifact_paths:
       - ./dist/**/*
 
