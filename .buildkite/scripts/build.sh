@@ -4,9 +4,9 @@ set -euo pipefail
 
 echo "--- :building_construction: Builing.."
 
-echo "Values..."
-#echo "KEY=${MYKEY}"
-#echo "VALUE=${MYVALUE}"
+echo "Values inside script..."
+echo $MYKEY
+echo $MYVALUE
 
 
 echo "Installing"
