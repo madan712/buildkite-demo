@@ -3,6 +3,7 @@ steps:
     key: "build"
     commands:
       - echo "I am here"
+      - cat /etc/passwd
       - pwd
       - ls -ltr
       - chmod +x .buildkite/scripts/build.sh
