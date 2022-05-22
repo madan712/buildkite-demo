@@ -2,8 +2,12 @@ steps:
   - label: ":building_construction: Build"
     key: "build"
     commands:
-      - echo "I am here"
+      - echo "All users........."
       - cat /etc/passwd
+      - echo "subuid........."
+      - cat /etc/subuid
+      - echo "subgid........."
+      - cat /etc/subgid
       - pwd
       - ls -ltr
       - chmod +x .buildkite/scripts/build.sh
