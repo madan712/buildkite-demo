@@ -10,6 +10,9 @@ steps:
       - cat /etc/subgid
       - pwd
       - ls -ltr
+      - echo "Values..."
+      - echo $MYKEY
+      - echo $MYVALUE
       - chmod +x .buildkite/scripts/build.sh
       - .buildkite/scripts/build.sh
       - pwd
