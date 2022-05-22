@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -10,8 +10,8 @@ buildkite-agent artifact download dist/* dist/
 
 
 echo "Values..."
-echo $MYKEY
-echo $MYVALUE
+echo "KEY=$MYKEY"
+echo "VALUE=$MYVALUE"
 
 pwd
 
