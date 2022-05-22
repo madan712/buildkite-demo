@@ -28,8 +28,6 @@ steps:
     key: "deploy"
     depends_on: "build"
     commands:
-      - echo "Env variables"
-      - env
       - chmod +x .buildkite/scripts/deploy.sh
       - .buildkite/scripts/deploy.sh
     plugins:
@@ -38,5 +36,5 @@ steps:
           propagate-environment: true
           propagate-aws-auth-token: true
           entrypoint: ""
-          shell: ["/bin/sh", "-c"]
+          shell: ["/usr/bin/env", "bash"]
           image: "hashicorp/terraform:latest"      
