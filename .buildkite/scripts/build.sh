@@ -4,11 +4,11 @@ set -euo pipefail
 
 echo "--- :building_construction: Builing.."
 
-#echo "Values inside script..."
+echo "Values inside script..."
 #KK=$(buildkite-agent meta-data get "MYKEY")
 #VV=$(buildkite-agent meta-data get "MYVALUE")
-#echo $KK
-#echo $VV
+echo $MYKEY
+echo $MYVALUE
 
 
 echo "Installing"

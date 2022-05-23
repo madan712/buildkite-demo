@@ -23,6 +23,7 @@ steps:
           propagate-environment: true
           image: "node:latest" 
           workdir: /app
+          job_environment: true
     artifact_paths:
       - ./dist/**/*
 
@@ -40,4 +41,5 @@ steps:
           propagate-aws-auth-token: true
           entrypoint: ""
           shell: ["/bin/sh", "-c"]
-          image: "hashicorp/terraform:latest"      
+          image: "hashicorp/terraform:latest"
+          job_environment: true
