@@ -23,7 +23,9 @@ steps:
           propagate-environment: true
           image: "node:latest" 
           workdir: /app
-          job_environment: true
+          environment:
+            - MYKEY=$MYKEY
+            - MYVALUE=$MYVALUE
     artifact_paths:
       - ./dist/**/*
 
@@ -42,4 +44,3 @@ steps:
           entrypoint: ""
           shell: ["/bin/sh", "-c"]
           image: "hashicorp/terraform:latest"
-          job_environment: true

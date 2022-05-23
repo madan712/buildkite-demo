@@ -9,9 +9,6 @@ mkdir -p dist/
 buildkite-agent artifact download dist/* dist/
 
 
-echo $MYKEY
-echo $MYVALUE
-
 pwd
 
 
