@@ -21,13 +21,15 @@ provider "aws" {
 
 }
 
-locals {
-	bucket_name = "staticnewjavaxp"
+
+variable "bucket_name" {
+	type = string
+	nullable = false
 }
 
 
 resource "aws_s3_bucket" "raf" {
-  bucket = locals.bucket_name
+  bucket = var.bucket_name
 
   tags = {
 
@@ -48,7 +50,7 @@ resource "aws_s3_bucket_website_configuration" "raf" {
 
 resource "aws_s3_bucket_policy" "raf" {
   bucket = aws_s3_bucket.raf.bucket
-  policy = templatefile("policy.json", { bucket = locals.bucket_name })
+  policy = templatefile("policy.json", { bucket = var.bucket_name })
 }
 
 
