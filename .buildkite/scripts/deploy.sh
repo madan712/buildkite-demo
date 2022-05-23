@@ -8,6 +8,9 @@ echo "Download files"
 mkdir -p dist/
 buildkite-agent artifact download dist/* dist/
 
+echo "Values inside script..."
+echo $MYKEY
+
 
 pwd
 
@@ -15,7 +18,6 @@ pwd
 echo "Terraform version.."
 terraform version
 
-#terraform init
+terraform init
 
-
-#terraform apply -auto-approve
+terraform apply -auto-approve

@@ -10,9 +10,6 @@ steps:
       - cat /etc/subgid
       - pwd
       - ls -ltr
-      - echo "Values..."
-      - echo $MYKEY
-      - echo $MYVALUE
       - chmod +x .buildkite/scripts/build.sh
       - .buildkite/scripts/build.sh
       - pwd
@@ -44,3 +41,6 @@ steps:
           entrypoint: ""
           shell: ["/bin/sh", "-c"]
           image: "hashicorp/terraform:latest"
+          environment:
+            - MYKEY=$MYKEY
+            - MYVALUE=$MYVALUE

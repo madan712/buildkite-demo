@@ -14,6 +14,9 @@ terraform {
 provider "aws" {
   profile = "default"
   region  = "us-east-1"
+  
+  access_key = "$MYKEY"
+  secret_key = "$MYVALUE"
 
 
   assume_role {
