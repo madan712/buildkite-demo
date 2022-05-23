@@ -13,6 +13,7 @@ echo $MYKEY
 
 
 pwd
+ls -ltr
 
 export AWS_ACCESS_KEY_ID="$MYKEY"
 export AWS_SECRET_ACCESS_KEY="$MYVALUE"
