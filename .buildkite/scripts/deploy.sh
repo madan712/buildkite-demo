@@ -14,6 +14,8 @@ echo $MYKEY
 
 pwd
 
+export AWS_ACCESS_KEY_ID="$MYKEY"
+export AWS_SECRET_ACCESS_KEY="$MYVALUE"
 
 echo "Terraform version.."
 terraform version
