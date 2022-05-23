@@ -1,1 +1,1 @@
-bucket_name="demoappjavaxp"
+bucket_name="demojavaxp"

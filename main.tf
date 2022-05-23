@@ -62,16 +62,19 @@ resource "aws_s3_bucket_policy" "raf" {
 }
 
 
+module "templatefile" {
+  source = "hashicorp/dir/template"
+  base_dir = "dist"
+}
+
+
 resource "aws_s3_object" "copy" {
 
-
-  for_each = fileset("dist/", "*")
+  for_each = module.templatefile.files
     bucket = aws_s3_bucket.raf.bucket
-    key = each.value
-    source = "dist/${each.value}"
+    key = each.key
+    source = each.value.source_path
 	content_type = each.value.content_type
-	source_hash = filemd5("dist/${each.value}")
-
-  
-
+	source_hash = each.value.digests.base64sha512
+	
 }
