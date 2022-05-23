@@ -54,26 +54,6 @@ resource "aws_s3_bucket_policy" "raf" {
 }
 
 
-resource "aws_s3_bucket_acl" "raf" {
-  bucket = aws_s3_bucket.raf.bucket
-  acl    = "public-read-write"
-}
-
-resource "aws_s3_bucket_cors_configuration" "raf" {
-
-  bucket = aws_s3_bucket.raf.bucket
-  
-  cors_rule {
-    allowed_headers = [ "*" ]
-    allowed_methods = [ "HEAD", "GET", "PUT", "POST", "DELETE" ]
-    allowed_origins = [ "*" ]
-    expose_headers  = [ "ETag", "x-amz-meta-custom-header", "Access-Control-Allow-Origin" ]
-    max_age_seconds = 3000
-  }
-}
-
-
-
 resource "aws_s3_object" "copy" {
 
 

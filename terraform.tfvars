@@ -1,1 +1,1 @@
-bucket_name="mystaticjavaxp"
+bucket_name="reactjavaxp"
