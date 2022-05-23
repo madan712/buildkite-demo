@@ -73,7 +73,7 @@ resource "aws_s3_bucket_cors_configuration" "raf" {
 }
 
 
-/*
+
 resource "aws_s3_object_copy" "copy" {
 
 
@@ -85,4 +85,3 @@ resource "aws_s3_object_copy" "copy" {
   
 
 }
-*/
