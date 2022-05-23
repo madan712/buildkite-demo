@@ -23,7 +23,7 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "raf" {
-  bucket = "rafs3static"
+  bucket = "staticjavaxp"
 
   tags = {
 
