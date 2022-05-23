@@ -15,6 +15,14 @@ echo $MYKEY
 pwd
 ls -ltr
 
+echo "Files..."
+cd dist
+pwd
+ls -ltr
+
+cd ..
+pwd
+
 export AWS_ACCESS_KEY_ID="$MYKEY"
 export AWS_SECRET_ACCESS_KEY="$MYVALUE"
 
