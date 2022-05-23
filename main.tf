@@ -74,7 +74,7 @@ resource "aws_s3_bucket_cors_configuration" "raf" {
 
 
 
-resource "aws_s3_bucket_object" "copy" {
+resource "aws_s3_object_copy" "copy" {
 
 
   for_each = fileset("dist/", "*")
