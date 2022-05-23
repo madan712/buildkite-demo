@@ -49,7 +49,7 @@ resource "aws_s3_bucket_website_configuration" "raf" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket = aws_s3_bucket.raf.bucket
+  bucket = aws_s3_bucket.raf.bucket 
 
   rule {
     object_ownership = "BucketOwnerPreferred"
@@ -69,6 +69,7 @@ resource "aws_s3_object" "copy" {
     bucket = aws_s3_bucket.raf.bucket
     key = each.value
     source = "dist/${each.value}"
+	content_type = each.value.content_type
 	source_hash = filemd5("dist/${each.value}")
 
   
