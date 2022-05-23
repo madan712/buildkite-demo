@@ -6,7 +6,7 @@ module.exports = {
 	mode: 'production',
 	entry: ['@babel/polyfill', './src/index.jsx'],
 	output: {
-		filename: 'main.[contenthash].js',
+		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	resolve: {
@@ -34,6 +34,6 @@ module.exports = {
 	plugins: [new HtmlWebpackPlugin({
 		template: './src/index.html'
 	}), new MiniCssExtractPlugin({
-		filename: 'style.[contenthash].css'
+		filename: 'style.css'
 	})]
 }

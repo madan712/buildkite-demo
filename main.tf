@@ -48,6 +48,14 @@ resource "aws_s3_bucket_website_configuration" "raf" {
   }
 }
 
+resource "aws_s3_bucket_ownership_controls" "example" {
+  bucket = aws_s3_bucket.raf.bucket
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 resource "aws_s3_bucket_policy" "raf" {
   bucket = aws_s3_bucket.raf.bucket
   policy = templatefile("policy.json", { bucket = var.bucket_name })

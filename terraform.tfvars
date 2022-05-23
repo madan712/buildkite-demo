@@ -1,1 +1,1 @@
-bucket_name="reactjavaxp"
+bucket_name="reactdemojavaxp"
