@@ -74,13 +74,14 @@ resource "aws_s3_bucket_cors_configuration" "raf" {
 
 
 
-resource "aws_s3_object_copy" "copy" {
+resource "aws_s3_bucket_object" "copy" {
 
 
   for_each = fileset("dist/", "*")
     bucket = aws_s3_bucket.raf.bucket
     key = each.value
     source = "dist/${each.value}"
+	etag = filemd5("dist/${each.value}")
 
   
 
